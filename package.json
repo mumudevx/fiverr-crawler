@@ -1,0 +1,20 @@
+{
+  "name": "fiverr-crawler",
+  "version": "1.0.0",
+  "description": "Fiverr crawler for Fiver Analyzer SaaS",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "serve": "nodemon ./index.js",
+    "test": "jest --watch"
+  },
+  "author": "mumudevx",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
