@@ -1,12 +1,20 @@
-// Crawl Fiver's categories
+import { fetchResponseFromUrl } from "../request/zenrows-requester.js";
+import {
+  parseHtmlContent,
+  parseCategoryElements,
+} from "../parsing/html-parser.js";
 
-// div#CategoriesMenu > ul > li : Main Categories
-// div#CategoriesMenu > ul > 
+const categoryUrl = "https://fiverr.com/categories";
 
-// Category JSON at : window.initialData.CategoriesMenu in script tag.
+const crawlCategories = async () => {
+  const htmlContent = await fetchResponseFromUrl(categoryUrl);
 
-// Send data to json parser
-// Get category tree from json parser
+  const selector = "section.sitemap-box ul";
+  const categoryListElements = parseHtmlContent(htmlContent, selector);
 
-// Save category tree to database
+  const categoryElements = parseCategoryElements(categoryListElements);
 
+  console.log(categoryElements);
+};
+
+export { crawlCategories };
